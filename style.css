@@ -1,0 +1,67 @@
+*,
+html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkgray;
+    padding: 50px;
+}
+
+header {
+    background-color: rgb(216, 212, 212);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
+}
+
+nav {
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: "sogeo UI", sans-serif;
+    font-weight: 600;
+    padding: 3px 0;
+    margin: 0.4em;
+}
+
+nav ul li a:hover {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.isi{
+    padding: 50px;
+}
