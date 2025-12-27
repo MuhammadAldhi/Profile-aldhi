@@ -1,0 +1,100 @@
+body {
+    background: rgb(27, 60, 83);
+}
+
+.navbar {
+    justify-content: center;
+    background: rgb(35, 76, 106);
+}
+
+.nav {
+    height: 70px;
+    align-items: center;
+    background: rgb(35, 76, 106);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.profile {
+    width: 200px;
+}
+
+.wAbout {
+    display: flex;
+    justify-content: center;
+    background: rgb(69, 104, 130);
+    border-radius: 100px;
+    margin-top: 40px;
+    margin-right: 50px;
+    box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.637);
+    
+}
+
+.content {
+    display: flex;
+    align-items: center;
+
+}
+
+.about {
+    background-color: transparent;
+    color: rgb(227, 227, 227);
+    border: none;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.content .card-body .card-title {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.firstName {
+    font-size: 1em;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(107, 164, 207);
+}
+
+.lastName {
+    align-self: flex-end;
+    font-weight: 600;
+    font-size: 1em;
+    font-style: normal;
+    color: rgb(227, 227, 227);
+}
+
+
+.project {
+    margin-bottom: 1000px;
+    margin-top: 70px;
+}
+
+.pChard {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.pChard .card {
+    background: rgb(69, 104, 130);
+    color: rgb(227, 227, 227);
+}
+
+.icon:hover {
+    width: 50px;
+    height: 50px;
+    transition: 0.4s;
+}
+
+.btn {
+    background: rgb(35, 76, 106);
+    color: rgb(227, 227, 227);
+}
+
+.btn:hover {
+    background: rgb(31, 67, 94);
+    transition: 0.5s;
+}
