@@ -43,6 +43,8 @@ body {
     background-color: transparent;
     color: rgb(227, 227, 227);
     border: none;
+    margin-top: 50px;
+    margin-bottom: 60px;
     margin-left: 70px;
     margin-right: 70px;
 }
@@ -69,7 +71,7 @@ body {
 
 
 .project {
-    margin-top: 70px;
+    margin-top: 140px;
 }
 
 .contact {
