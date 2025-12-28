@@ -10,7 +10,7 @@ body {
 .nav {
     height: 70px;
     align-items: center;
-    background: rgb(35, 76, 106);
+    /* background: rgb(35, 76, 106); */
 }
 
 .navbar-brand {
@@ -27,7 +27,6 @@ body {
     justify-content: center;
     background: rgb(69, 104, 130);
     border-radius: 100px;
-    margin-top: 40px;
     margin-right: 50px;
     box-shadow: 10px 5px 30px 5px rgba(0, 0, 0, 0.637);
 
@@ -43,8 +42,6 @@ body {
     background-color: transparent;
     color: rgb(227, 227, 227);
     border: none;
-    margin-top: 50px;
-    margin-bottom: 60px;
     margin-left: 70px;
     margin-right: 70px;
 }
@@ -71,7 +68,7 @@ body {
 
 
 .project {
-    margin-top: 140px;
+    margin-top: 100px;
 }
 
 .contact {
