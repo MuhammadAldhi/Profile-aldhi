@@ -205,34 +205,38 @@
             AOS.init();
         </script>
         
-            
-<script>
+         <script>
 function sendWhatsApp() {
     // 1. Ambil data dari input field
-    const email = document.getElementById('emailInput').value;
-    const message = document.getElementById('messageInput').value;
+    const email = document.getElementById('emailInput').value.trim();
+    const message = document.getElementById('messageInput').value.trim();
     const phoneNumber = "6287818457387";
 
-    // 2. Validasi: Pastikan semua kolom diisi
+    // 2. Validasi: Pastikan tidak kosong
     if (email === "" || message === "") {
-        alert("Harap isi email dan pesan Anda terlebih dahulu!");
+        alert("Harap isi semua kolom!");
         return;
     }
 
-    // 3. Susun teks pesan
-    // \n digunakan untuk baris baru (Enter)
+    // 3. Validasi Khusus: Harus berisi @gmail.com
+    if (!email.toLowerCase().endsWith("@gmail.com")) {
+        alert("Email harus menggunakan alamat @gmail.com yang valid!");
+        return;
+    }
+
+    // 4. Susun teks pesan
     const text = "Halo, ada pesan baru dari form kontak:\n\n" +
                  "📧 *Email:* " + email + "\n" +
                  "💬 *Pesan:* " + message;
 
-    // 4. Encode pesan agar aman untuk URL
+    // 5. Encode pesan dan buka WhatsApp
     const encodedText = encodeURIComponent(text);
-
-    // 5. Buat URL WhatsApp dan buka di tab baru
     const waUrl = `https://wa.me{phoneNumber}?text=${encodedText}`;
+    
     window.open(waUrl, '_blank');
 }
 </script>
+
 
         </body>
 
