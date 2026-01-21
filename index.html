@@ -184,12 +184,12 @@
     <div class="mb-3">
         <label for="emailInput" class="form-label"></label>
         <!-- Tambahkan id="emailInput" -->
-        <input type="email" class="gmail form-control" id="emailInput"
+        <input type="email" required class="gmail form-control" id="emailInput"
             placeholder="name@gmail.com" style="font-size: 500;">
     </div>
     <div class="mb-3">
         <!-- Tambahkan id="messageInput" -->
-        <textarea class="message form-control" id="messageInput" rows="3" placeholder="Message"
+        <textarea class="message form-control" required id="messageInput" rows="3" placeholder="Message"
             style="font-size: 500;"></textarea>
     </div>
 
@@ -204,31 +204,36 @@
         <script>
             AOS.init();
         </script>
-        <script>
+        
             
+<script>
 function sendWhatsApp() {
-    // 1. Ambil nilai dari input
+    // 1. Ambil data dari input field
     const email = document.getElementById('emailInput').value;
     const message = document.getElementById('messageInput').value;
-    const phoneNumber = "6287818457387"; // Nomor tujuan
+    const phoneNumber = "6287818457387";
 
-    // 2. Validasi sederhana (opsional)
-    if (!email || !message) {
-        alert("Silakan isi email dan pesan terlebih dahulu!");
+    // 2. Validasi: Pastikan semua kolom diisi
+    if (email === "" || message === "") {
+        alert("Harap isi email dan pesan Anda terlebih dahulu!");
         return;
     }
 
-    // 3. Buat format pesan
-    const text = `Halo, saya ingin menghubungi Anda.\n\n*Email:* ${email}\n*Pesan:* ${message}`;
-    
+    // 3. Susun teks pesan
+    // \n digunakan untuk baris baru (Enter)
+    const text = "Halo, ada pesan baru dari form kontak:\n\n" +
+                 "📧 *Email:* " + email + "\n" +
+                 "💬 *Pesan:* " + message;
+
     // 4. Encode pesan agar aman untuk URL
     const encodedText = encodeURIComponent(text);
 
-    // 5. Buka link WhatsApp di tab baru
-    const waUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+    // 5. Buat URL WhatsApp dan buka di tab baru
+    const waUrl = `https://wa.me{phoneNumber}?text=${encodedText}`;
     window.open(waUrl, '_blank');
 }
-        </script>
+</script>
+
         </body>
 
         </html>
