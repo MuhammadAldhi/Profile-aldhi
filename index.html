@@ -178,23 +178,24 @@
 
 
         <div class="container contact" id="contact">
-            <div style="text-align: center;">
-                <h2 style="color: rgb(227, 227, 227); text-decoration: underline; text-underline-offset: 8px;">Contact
-                </h2>
-            </div>
-            <div class="mb-3"">
-                <label for=" exampleFormControlInput1" class="form-label"></label>
-                <input type="email" class="gmail form-control" id="exampleFormControlInput1"
-                    placeholder="name@gmail.com" style="font-size: 500;">
-            </div>
-            <div class="mb-3">
-                <textarea class="message form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Message"
-                    style="font-size: 500;"></textarea>
-            </div>
+    <div style="text-align: center;">
+        <h2 style="color: rgb(227, 227, 227); text-decoration: underline; text-underline-offset: 8px;">Contact</h2>
+    </div>
+    <div class="mb-3">
+        <label for="emailInput" class="form-label"></label>
+        <!-- Tambahkan id="emailInput" -->
+        <input type="email" class="gmail form-control" id="emailInput"
+            placeholder="name@gmail.com" style="font-size: 500;">
+    </div>
+    <div class="mb-3">
+        <!-- Tambahkan id="messageInput" -->
+        <textarea class="message form-control" id="messageInput" rows="3" placeholder="Message"
+            style="font-size: 500;"></textarea>
+    </div>
 
-            <button type="button" class="btn send">SEND</button>
-
-        </div>
+    <!-- Tambahkan onclick="sendWhatsApp()" -->
+    <button type="button" class="btn send" onclick="sendWhatsApp()">SEND</button>
+</div>
 
 
 
@@ -202,6 +203,31 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
             AOS.init();
+        </script>
+        <script>
+            
+function sendWhatsApp() {
+    // 1. Ambil nilai dari input
+    const email = document.getElementById('emailInput').value;
+    const message = document.getElementById('messageInput').value;
+    const phoneNumber = "6287818457387"; // Nomor tujuan
+
+    // 2. Validasi sederhana (opsional)
+    if (!email || !message) {
+        alert("Silakan isi email dan pesan terlebih dahulu!");
+        return;
+    }
+
+    // 3. Buat format pesan
+    const text = `Halo, saya ingin menghubungi Anda.\n\n*Email:* ${email}\n*Pesan:* ${message}`;
+    
+    // 4. Encode pesan agar aman untuk URL
+    const encodedText = encodeURIComponent(text);
+
+    // 5. Buka link WhatsApp di tab baru
+    const waUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+    window.open(waUrl, '_blank');
+}
         </script>
         </body>
 
